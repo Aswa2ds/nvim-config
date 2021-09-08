@@ -167,4 +167,40 @@ call wilder#set_option('renderer', wilder#renderer_mux({':': wilder#popupmenu_re
 
 end
 
+-- function config.autosave()
+--     require("autosave").setup(
+--         {
+--             enabled = true,
+--             execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+--             events = {"InsertLeave", "TextChanged"},
+--             conditions = {
+--                 exists = true,
+--                 filetype_is_not = {},
+--                 modifiable = true
+--             },
+--             write_all_buffers = false,
+--             on_off_commands = true,
+--             clean_command_line_interval = 0,
+--             debounce_delay = 135
+--         }
+--     )
+-- end
+
+function config.ale()
+    vim.g.ale_sign_column_always = 1
+    vim.g.ale_set_highlights = 0
+    vim.g.ale_sign_error = '🌚'
+    vim.g.ale_sign_warning = '🌝'
+end
+
+function config.tagbar()
+    vim.g.tagbar_auto_peview = 1
+    vim.g.tagbar_sort = 0
+end
+
+function config.vim_auto_save()
+    vim.g.auto_save = 1
+    vim.g.auto_save_events = {"InsertLeave", "TextChanged"}
+end
+
 return config

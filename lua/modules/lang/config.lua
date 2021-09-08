@@ -84,13 +84,40 @@ function config.rust_tools()
     require('rust-tools').setup(opts)
 end
 
--- function config.lang_go() vim.g.go_doc_keywordprg_enabled = false end
+function config.lang_go() 
+    -- vim.g.go_debug_windows = {
+    --     vars = 'leftabove 30vnew',
+    --     stack = "leftabove 20vnew",
+    --     goroutines = 'botright 10new',
+    --     out = 'botright 5new'
+    -- }
+    vim.g.go_debug_preserve_layout = 0
+end
 
 function config.lang_org()
     require('orgmode').setup({
         org_agenda_files = {'~/Sync/org/*'},
         org_default_notes_file = '~/Sync/org/refile.org'
     })
+end
+
+function config.md_img_paste()
+    vim.g.mdip_imgdir = 'pic'
+    vim.g.mdip_imgname = 'image'
+    vim.cmd('autocmd FileType markdown nmap <buffer><silent> <C-p> :call mdip#MarkdownClipboardImage()<CR>')
+end
+
+function config.vim_pandoc_syntax()
+    vim.cmd('let g:pandoc#filetypes#handled = ["pandoc", "markdown"]')
+    vim.cmd('let g:pandoc#filetypes#pandoc_markdown = 0')
+end
+
+function config.vim_markdown_toc()
+    vim.g.vmt_auto_update_on_save = 0
+end
+
+function config.mkdp()
+    vim.g.mkdp_browser = 'chromium'
 end
 
 return config

@@ -46,4 +46,16 @@ tools['gelguy/wilder.nvim'] = {
     config = conf.wilder,
     requires = {{'romgrk/fzy-lua-native', after = 'wilder.nvim'}}
 }
+tools['dense-analysis/ale'] = {
+    config = conf.ale
+}
+tools['majutsushi/tagbar'] = {
+    config = conf.tagbar
+}
+tools['lvht/tagbar-markdown'] = {
+    after = 'tagbar'
+}
+tools['907th/vim-auto-save'] = {
+    config = conf.vim_auto_save
+}
 return tools

@@ -128,13 +128,44 @@ end
 --     tabnine:setup({max_line = 1000, max_num_results = 20, sort = true})
 -- end
 
-function config.autopairs()
-    require('nvim-autopairs').setup {fast_wrap = {}}
-    require("nvim-autopairs.completion.cmp").setup({
-        map_cr = true,
-        map_complete = true,
-        auto_select = true
-    })
+function config.ultisnips()
+    vim.g.UltiSnipsExpandTrigger = "ii"
+    vim.g.UltiSnipsJumpForwardTrigger = "ii"
+    vim.g.UltiSnipsJumpBackwardTrigger = "iI"
+end
+
+-- function config.autopairs()
+--     -- require('nvim-autopairs').setup {fast_wrap = {}}
+--     local npairs = require("nvim-autopairs")
+-- 
+--     npairs.setup({
+--         check_ts = true,
+--         ts_config = {
+--             lua = {'string'},-- it will not add pair on that treesitter node
+--             javascript = {'template_string'},
+--             java = false,-- don't check treesitter on java
+--         }
+--     })
+-- 
+--     require('nvim-treesitter.configs').setup {
+--         autopairs = {enable = true}
+--     }
+-- 
+--     local ts_conds = require('nvim-autopairs.ts-conds')
+-- 
+-- 
+--     -- press % => %% is only inside comment or string
+--     npairs.add_rules({
+--     Rule("%", "%", "lua")
+--         :with_pair(ts_conds.is_ts_node({'string','comment'})),
+--     Rule("$", "$", "lua")
+--         :with_pair(ts_conds.is_not_ts_node({'function'}))
+--     })
+-- end
+
+function config.ycm()
+    vim.g.ycm_enable_diagnostic_signs = 0
+    vim.g.ycm_enable_diagnostic_highlighting = 0
 end
 
 return config

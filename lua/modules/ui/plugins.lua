@@ -14,11 +14,27 @@ ui['kyazdani42/nvim-tree.lua'] = {
     cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
     config = conf.nvim_tree
 }
-ui['lewis6991/gitsigns.nvim'] = {
+-- ui['ryanoasis/vim-devicons'] = {
+--     config = conf.vim_devicons
+-- }
+-- ui['preservim/nerdtree'] = {
+--     config = conf.nerdtree
+-- }
+-- ui['Xuyuanp/nerdtree-git-plugin'] = {
+--     config = conf.nerdtree_git_plugin
+-- }
+-- ui['tiagofumo/vim-nerdtree-syntax-highlight'] = {
+-- }
+-- ui['lewis6991/gitsigns.nvim'] = {
+--     opt = true,
+--     event = {'BufRead', 'BufNewFile'},
+--     config = conf.gitsigns,
+--     requires = {'nvim-lua/plenary.nvim', opt = true}
+-- }
+ui['airblade/vim-gitgutter'] = {
     opt = true,
     event = {'BufRead', 'BufNewFile'},
-    config = conf.gitsigns,
-    requires = {'nvim-lua/plenary.nvim', opt = true}
+    config = conf.vim_gitgutter
 }
 ui['lukas-reineke/indent-blankline.nvim'] = {
     opt = true,
