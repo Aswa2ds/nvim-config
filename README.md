@@ -1,5 +1,7 @@
 # Table of Contents
 
+这个配置文件是基于ayamir/nvimdots 进行的修改，完全依据自己的使用习惯进行的负优化，如果需要更强的配置版本，请认准原作者
+
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [Structure](#structure)
