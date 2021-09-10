@@ -94,14 +94,19 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " Vim-Plug ---- Completion
+" Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'buoto/gotests-vim'
 
 " Vim-Plug ---- lang
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Vim-Plug ---- editor
+Plug 'junegunn/vim-easy-align'
+Plug 'itchyny/vim-cursorword'
+Plug 'terrortylor/nvim-comment'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'romgrk/nvim-treesitter-context'
@@ -197,6 +202,19 @@ let g:auto_save = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 " Vim-Plug coc.nvim
+" Vim-Plug coc-snippet
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 
 " Automatically change work directory
@@ -208,11 +226,6 @@ nnoremap <leader><leader>v :tabe $MYVIMRC<cr>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-
 nnoremap <A-[> :vertical resize -5<CR>
 nnoremap <A-]> :vertical resize +5<CR>
 nnoremap <C-q> :wq<CR>
@@ -220,6 +233,9 @@ nnoremap <A-q> :bw!<CR>
 
 inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:wq<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " Plugin Mapping
 nnoremap <leader>pi :PlugInstall<cr>
@@ -262,6 +278,21 @@ omap T <Plug>(eft-T)
 
 nnoremap <C-w>t :Term<CR>
 nnoremap <C-w>T :VTerm<CR>
+
+nnoremap <leader>tt :TagbarToggle<CR>
+
+" " navigate chunks of current buffer
+" nmap [c <Plug>(coc-git-prevchunk)
+" nmap ]c <Plug>(coc-git-nextchunk)
+" " show chunk diff at current position
+" nmap gs <Plug>(coc-git-chunkinfo)
+" " show commit contains current position
+" nmap gc <Plug>(coc-git-commit)
+" " create text object for git chunks
+" omap ig <Plug>(coc-git-chunk-inner)
+" xmap ig <Plug>(coc-git-chunk-inner)
+" omap ag <Plug>(coc-git-chunk-outer)
+" xmap ag <Plug>(coc-git-chunk-outer)
 
 autocmd FileType go nmap <leader>gb <Plug>(go-build)
 autocmd FileType go nmap <leader>gr <Plug>(go-run)
