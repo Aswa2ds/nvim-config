@@ -58,4 +58,7 @@ tools['lvht/tagbar-markdown'] = {
 tools['907th/vim-auto-save'] = {
     config = conf.vim_auto_save
 }
+tools['dkprice/vim-easygrep'] = {
+    
+}
 return tools

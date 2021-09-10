@@ -49,7 +49,7 @@ function config.lualine()
                     color_info = "#81A1AC",
                     color_hint = "#88C0D0",
                     symbols = {error = ' ', warn = ' ', info = ' '}
-                }, {lsp}, {'encoding'}, {'fileformat'}
+                }, {'encoding'}, {'fileformat'}
             },
             lualine_y = {'progress'},
             lualine_z = {'location'}
@@ -164,12 +164,12 @@ end
 function config.nvim_bufferline()
     require('bufferline').setup {
         options = {
-            number = "both",
-            numbers = function(opts)
-
-                return string.format('%s·%s', opts.raise(opts.ordinal),
-                                     opts.lower(opts.id))
-            end,
+            number = "none",
+--             numbers = function(opts)
+-- 
+--                 return string.format('%s·%s', opts.raise(opts.ordinal),
+--                                      opts.lower(opts.id))
+--             end,
             modified_icon = '✥',
             buffer_close_icon = '',
             left_trunc_marker = "",
@@ -179,10 +179,10 @@ function config.nvim_bufferline()
             tab_size = 20,
             show_buffer_close_icons = true,
             show_buffer_icons = true,
-            show_tab_indicators = true,
-            diagnostics = "nvim_lsp",
+            show_tab_indicators = false,
+            diagnostics = "false",
             always_show_bufferline = true,
-            separator_style = "slant",
+            separator_style = "thin",
             offsets = {
                 {
                     filetype = "NvimTree",
@@ -245,7 +245,9 @@ end
 --     }
 -- end
 
-
+function config.vim_gitgutter()
+    vim.g.gitgutter_grep=''
+end
 
 function config.indent_blankline()
     -- vim.cmd [[highlight IndentTwo guifg=#D08770 guibg=NONE gui=nocombine]]

@@ -24,6 +24,7 @@ local plug_map = {
     ["n|<A-7>"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(),
     ["n|<A-8>"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
     ["n|<A-9>"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
+    ["n|<A-q>"] = map_cr("bw!"):with_noremap(),
     -- Packer
     ["n|<leader>ps"] = map_cr("PackerSync"):with_silent():with_noremap()
         :with_nowait(),
@@ -131,6 +132,8 @@ local plug_map = {
         :with_silent(),
     ["n|<leader>dt"] = map_cr("GoDebugTest"):with_noremap()
         :with_silent(),
+    ["n|<leader>dtf"] = map_cr("GoDebugTestFunc"):with_noremap()
+        :with_silent(),
     ["n|<leader>ds"] = map_cr("GoDebugStop"):with_noremap()
         :with_silent(),
     ["n|<leader>db"] = map_cr("GoDebugBreakpoint"):with_noremap()
@@ -145,6 +148,15 @@ local plug_map = {
         :with_silent(),
     ["n|<leader>do"] = map_cr("GodebugStepOut"):with_noremap()
         :with_silent(),
+    ["n|<leader>gfs"] = map_cr("GoFillStruct"):with_noremap()
+        :with_silent(),
+    ["n|<leader>gts"] = map_cr("GoTests"):with_noremap()
+        :with_silent(),
+    ["n|<leader>gr"] = map_cr("GoRun"):with_noremap()
+        :with_silent(),
+    ["n|<leader>gi"] = map_cr("GoImpl"):with_noremap()
+        :with_silent(),
+    
     -- Plugin tagbar
     ["n|<leader>tt"] = map_cr("TagbarToggle"):with_noremap()
         :with_silent(),
