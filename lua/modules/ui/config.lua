@@ -133,34 +133,6 @@ function config.nvim_tree()
     }
 end
 
--- function vim_devicons()
---     vim.g.webdevicons_enable_nerdtree = 1
---     vim.g.webdevicons_conceal_nerdtree_brackets = 1
--- end
--- 
--- function config.nerdtree()
---     vim.cmd('autocmd StdinReadPre * let s:std_in=1')
---     vim.cmd('autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif')
---     vim.cmd('autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif')
---     vim.cmd('autocmd BufEnter * if tabpagenr("$") == 1 && winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() | quit | endif')
---     vim.cmd('autocmd BufWinEnter * if getcmdwintype() == "" | silent NERDTreeMirror | endif')
--- end
--- 
--- function config.nerdtree_git_plugin()
---     vim.g.NERDTreeGitStatusIndicatorMapCustom = {
---         Modified  = '✹',
---         Staged    = '✚',
---         Untracked = '✭',
---         Renamed   = '➜',
---         Unmerged  = '═',
---         Deleted   = '✖',
---         Dirty     = '✗',
---         Ignored   = '☒',
---         Clean     = '✔︎',
---         Unknown   = '?',
---     }
--- end
-
 function config.nvim_bufferline()
     require('bufferline').setup {
         options = {
@@ -194,56 +166,6 @@ function config.nvim_bufferline()
         }
     }
 end
-
--- function config.gitsigns()
---     if not packer_plugins['plenary.nvim'].loaded then
---         vim.cmd [[packadd plenary.nvim]]
---     end
---     require('gitsigns').setup {
---         signs = {
---             add = {hl = 'GitGutterAdd', text = '▋'},
---             change = {hl = 'GitGutterChange', text = '▋'},
---             delete = {hl = 'GitGutterDelete', text = '▋'},
---             topdelete = {hl = 'GitGutterDeleteChange', text = '▔'},
---             changedelete = {hl = 'GitGutterChange', text = '▎'}
---         },
---         keymaps = {
---             -- Default keymap options
---             noremap = true,
---             buffer = true,
--- 
---             ['n ]g'] = {
---                 expr = true,
---                 "&diff ? ']g' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"
---             },
---             ['n [g'] = {
---                 expr = true,
---                 "&diff ? '[g' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"
---             },
--- 
---             ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
---             ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
---             ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
---             ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
---             ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
---             ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
---             ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
---             ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
--- 
---             -- Text objects
---             ['o ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>',
---             ['x ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>'
---         },
---         watch_index = {interval = 1000, follow_files = true},
---         current_line_blame = true,
---         current_line_blame_opts = {delay = 1000, virtual_text_pos = 'eol'},
---         sign_priority = 6,
---         update_debounce = 100,
---         status_formatter = nil, -- Use default
---         word_diff = false,
---         use_internal_diff = true -- If luajit is present
---     }
--- end
 
 function config.vim_gitgutter()
     vim.g.gitgutter_grep=''

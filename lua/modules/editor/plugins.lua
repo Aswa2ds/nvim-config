@@ -91,17 +91,5 @@ editor['jdhao/better-escape.vim'] = {
     opt = true,
     event = 'InsertEnter'
 }
-editor['rcarriga/nvim-dap-ui'] = {
-    opt = false,
-    config = conf.dapui,
-    requires = {
-        {'mfussenegger/nvim-dap', config = conf.dap}, {
-            'Pocco81/DAPInstall.nvim',
-            opt = true,
-            cmd = {'DIInstall', 'DIUninstall', 'DIList'},
-            config = conf.dapinstall
-        }
-    }
-}
 
 return editor
