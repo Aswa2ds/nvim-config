@@ -24,30 +24,16 @@ tools['nvim-telescope/telescope-frecency.nvim'] = {
     after = 'telescope.nvim',
     requires = {{'tami5/sql.nvim', opt = true}}
 }
-tools['thinca/vim-quickrun'] = {opt = true, cmd = {'QuickRun', 'Q'}}
-tools['michaelb/sniprun'] = {
-    opt = true,
-    run = 'bash ./install.sh',
-    cmd = {"SnipRun", "'<,'>SnipRun"}
-}
 tools['folke/which-key.nvim'] = {
     opt = true,
     keys = ",",
     config = function() require("which-key").setup {} end
-}
-tools['folke/trouble.nvim'] = {
-    opt = true,
-    cmd = {"Trouble", "TroubleToggle", "TroubleRefresh"},
-    config = conf.trouble
 }
 tools['dstein64/vim-startuptime'] = {opt = true, cmd = "StartupTime"}
 tools['gelguy/wilder.nvim'] = {
     event = "CmdlineEnter",
     config = conf.wilder,
     requires = {{'romgrk/fzy-lua-native', after = 'wilder.nvim'}}
-}
-tools['dense-analysis/ale'] = {
-    config = conf.ale
 }
 tools['majutsushi/tagbar'] = {
     config = conf.tagbar
@@ -58,7 +44,5 @@ tools['lvht/tagbar-markdown'] = {
 tools['907th/vim-auto-save'] = {
     config = conf.vim_auto_save
 }
-tools['dkprice/vim-easygrep'] = {
-    
-}
+
 return tools

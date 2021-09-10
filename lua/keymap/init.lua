@@ -119,14 +119,10 @@ local plug_map = {
     ["n|<F5>"] = map_cr('Term'):with_noremap():with_silent(),
     ["n|<C-w>t"] = map_cr('Term'):with_noremap():with_silent(),
     ["n|<C-w>T"] = map_cr('VTerm'):with_noremap():with_silent(),
-    -- Plugin MarkdownPreview
-    ["n|<F12>"] = map_cr('MarkdownPreviewToggle'):with_noremap():with_silent(),
     -- Plugin auto_session
     ["n|<leader>ss"] = map_cu('SaveSession'):with_noremap():with_silent(),
     ["n|<leader>sr"] = map_cu('RestoreSession'):with_noremap():with_silent(),
     ["n|<leader>sd"] = map_cu('DeleteSession'):with_noremap():with_silent(),
-    -- Plugin SnipRun
-    ["v|r"] = map_cr('SnipRun'):with_noremap():with_silent(),
     -- plugin vim-go
     ["n|<F6>"] = map_cr("GoDebugStart"):with_noremap()
         :with_silent(),
@@ -156,52 +152,9 @@ local plug_map = {
         :with_silent(),
     ["n|<leader>gi"] = map_cr("GoImpl"):with_noremap()
         :with_silent(),
-    
     -- Plugin tagbar
     ["n|<leader>tt"] = map_cr("TagbarToggle"):with_noremap()
-        :with_silent(),
-    -- Plugin nerdtree
-    -- ["n|<leader>n"] = map_cr("NERDTreeFocus"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<C-n>"] = map_cr("NERDTree"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<C-t>"] = map_cr("NERDTreeToggle"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<C-f>"] = map_cr("NERDTreeFind"):with_noremap()
-    --     :with_silent()
-
-    -- Plugin dap
-    -- ["n|<F6>"] = map_cr("lua require('dap').continue()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dr"] = map_cr("lua require('dap').continue()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dd"] = map_cr("lua require('dap').disconnect()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>db"] = map_cr("lua require('dap').toggle_breakpoint()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dB"] = map_cr(
-    --     "lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dbl"] = map_cr("lua require('dap').list_breakpoints()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>drc"] = map_cr("lua require('dap').run_to_cursor()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>drl"] = map_cr("lua require('dap').run_last()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<F9>"] = map_cr("lua require('dap').step_over()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dv"] = map_cr("lua require('dap').step_over()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<F10>"] = map_cr("lua require('dap').step_into()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>di"] = map_cr("lua require('dap').step_into()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<F11>"] = map_cr("lua require('dap').step_out()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>do"] = map_cr("lua require('dap').step_out()"):with_noremap()
-    --     :with_silent(),
-    -- ["n|<leader>dl"] = map_cr("lua require('dap').repl.open()"):with_noremap()
-    --     :with_silent()
+        :with_silent()
 };
 
 bind.nvim_load_mapping(plug_map)
