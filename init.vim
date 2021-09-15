@@ -101,6 +101,7 @@ Plug 'buoto/gotests-vim'
 
 " Vim-Plug ---- lang
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Vim-Plug ---- editor
 Plug 'junegunn/vim-easy-align'
@@ -123,7 +124,7 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'vimlab/split-term.vim'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'rmagatti/auto-session'
+" Plug 'rmagatti/auto-session'
 
 " Vim-Plug ---- ui
 Plug 'sainnhe/edge'
@@ -135,7 +136,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'folke/zen-mode.nvim'
 Plug 'folke/twilight.nvim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 "Vim-Plug ----- tools
 Plug 'nvim-lua/popup.nvim'
@@ -152,6 +153,7 @@ Plug 'romgrk/fzy-lua-native'
 Plug 'majutsushi/tagbar'
 Plug 'lvht/tagbar-markdown'
 Plug '907th/vim-auto-save'
+Plug 'ferrine/md-img-paste.vim' 
 
 call plug#end()
 
@@ -215,7 +217,6 @@ let g:coc_snippet_prev = '<c-k>'
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
-
 
 " Automatically change work directory
 autocmd BufEnter * silent! lcd %:p:h
@@ -281,25 +282,29 @@ nnoremap <C-w>T :VTerm<CR>
 
 nnoremap <leader>tt :TagbarToggle<CR>
 
-" " navigate chunks of current buffer
-" nmap [c <Plug>(coc-git-prevchunk)
-" nmap ]c <Plug>(coc-git-nextchunk)
-" " show chunk diff at current position
-" nmap gs <Plug>(coc-git-chunkinfo)
-" " show commit contains current position
-" nmap gc <Plug>(coc-git-commit)
-" " create text object for git chunks
-" omap ig <Plug>(coc-git-chunk-inner)
-" xmap ig <Plug>(coc-git-chunk-inner)
-" omap ag <Plug>(coc-git-chunk-outer)
-" xmap ag <Plug>(coc-git-chunk-outer)
+" navigate chunks of current buffer
+nmap [c <Plug>(coc-git-prevchunk)
+nmap ]c <Plug>(coc-git-nextchunk)
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
+nmap <leader>c :CocList
 
 autocmd FileType go nmap <leader>gb <Plug>(go-build)
 autocmd FileType go nmap <leader>gr <Plug>(go-run)
 autocmd FileType go nmap <leader>gi :GoImpl<CR>
 autocmd FileType go nmap <leader>gt <Plug>(go-test)
 autocmd FileType go nmap <leader>gtf <Plug>(go-test-func)
-autocmd FileType go nmap <leader>gfs 
+autocmd FileType go nmap <C-[> <Plug>(go-def-pop)
+autocmd FileType go nmap <leader>gfs :GoFillStruct<CR>
+autocmd FileType go nmap <leader>gts :GoTests<CR>
 autocmd FileType go nmap <leader>gds :GoDebugStart<CR>
 autocmd FileType go nmap <leader>ds :GoDebugStop<CR>
 autocmd FileType go nmap <leader>dt :GoDebugTest<CR>

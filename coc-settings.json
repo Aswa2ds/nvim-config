@@ -1,5 +1,6 @@
 {
 	"diagnostic.errorSign": "🌚",
 	"diagnostic.warningSign": "🌝",
-	"git.addedSign.text": ""
+  "git.addedSign.text": "",
+  "git.enableGutters": true
 }
