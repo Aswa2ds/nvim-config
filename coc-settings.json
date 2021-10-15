@@ -1,6 +1,7 @@
 {
-	"diagnostic.errorSign": "🌚",
-	"diagnostic.warningSign": "🌝",
-  "git.addedSign.text": "",
-  "git.enableGutters": true
+    "diagnostic.errorSign": "🌚",
+    "diagnostic.warningSign": "🌝",
+    "git.addedSign.text": "",
+    "git.enableGutters": true,
+    "snippets.ultisnips.usePythonx": true
 }

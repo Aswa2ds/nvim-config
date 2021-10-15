@@ -24,7 +24,7 @@ set smartindent
 set cindent
 set cinoptions=g0,:0,N-s,(0
 
-set noexpandtab
+set expandtab
 set foldmethod=indent
 set tabstop=4
 set shiftwidth=4
@@ -124,7 +124,8 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'vimlab/split-term.vim'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'rmagatti/auto-session'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Vim-Plug ---- ui
 Plug 'sainnhe/edge'
